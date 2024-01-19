@@ -1,8 +1,15 @@
 [package]
 name = "awesome-docs"
+description = "A crate designed to generate documents of many types"
 version = "0.0.0"
 edition = "2021"
-
+license = "MIT OR Apache-2.0"
+keywords = ["document", "doc_generator"]
+categories = ["parser-implementations", "template-engine"]
+authors = ["Daniel Gallups <44790295+dsgallups@users.noreply.github.com>"]
+rust-version = "1.76"
+readme = "README.md"
+repository = "https://github.com/dsgallups/awesome-docs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

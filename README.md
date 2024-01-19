@@ -1,0 +1,2 @@
+# This Crate has just spawned, and is a work in progress.
+I am currently working to design a tool that can be used to generate many document types using a common syntax. The design considerations are to be determined.

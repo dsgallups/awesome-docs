@@ -6,3 +6,5 @@ pub use text::*;
 
 mod ordered_list;
 pub use ordered_list::*;
+
+pub trait TextContent {}

@@ -1,12 +1,12 @@
-use crate::{content::OrderedList, document::TextDocument};
+use crate::document::{TextDocument, TextDocumentDefinition};
 
 pub struct Pdf {
     title: String,
-    content: OrderedList,
+    definition: TextDocumentDefinition,
 }
 
 impl TextDocument for Pdf {
-    fn new(title: String, content: OrderedList) -> Self {
-        Self { title, content }
+    fn new(title: String, definition: TextDocumentDefinition) -> Self {
+        Self { title, definition }
     }
 }

@@ -1,11 +1,11 @@
-use crate::document::TextDocument;
+use crate::document::{TextDocument, TextDocumentDefinition};
 
 pub struct Pptx {
     slides: Vec<Slide>,
 }
 
 impl TextDocument for Pptx {
-    fn new(title: String, content: crate::content::OrderedList) -> Self {
+    fn new(title: String, content: TextDocumentDefinition) -> Self {
         let slide = Slide { title, content };
         Self {
             slides: vec![slide],
@@ -15,5 +15,5 @@ impl TextDocument for Pptx {
 
 pub struct Slide {
     title: String,
-    content: crate::content::OrderedList,
+    content: TextDocumentDefinition,
 }

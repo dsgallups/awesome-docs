@@ -1,4 +1,4 @@
-use super::{OrderedList, Text};
+use super::{List, Ordered, Text};
 
 pub struct NoContent;
 
@@ -36,7 +36,7 @@ impl<T> ContentBuilder<T> {
         self
     }
 
-    pub fn ordered_list(self) -> ContentBuilder<OrderedList> {
+    pub fn ordered_list(self) -> ContentBuilder<List<Ordered>> {
         ContentBuilder {
             value: self.value,
             _marker: std::marker::PhantomData,
@@ -44,8 +44,8 @@ impl<T> ContentBuilder<T> {
     }
 }
 
-impl ContentBuilder<OrderedList> {
-    pub fn build(self) -> OrderedList {
-        OrderedList::new(self.value)
+impl ContentBuilder<List<Ordered>> {
+    pub fn build(self) -> List<Ordered> {
+        List::new_ordered().add_children(self.value)
     }
 }

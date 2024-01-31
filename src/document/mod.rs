@@ -2,8 +2,9 @@ mod builder;
 
 pub use builder::*;
 
-use crate::content::OrderedList;
+mod definition;
+pub use definition::*;
 
 pub trait TextDocument {
-    fn new(title: String, content: OrderedList) -> Self;
+    fn new(title: String, definition: TextDocumentDefinition) -> Self;
 }

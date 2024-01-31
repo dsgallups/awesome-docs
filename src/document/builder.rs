@@ -1,16 +1,27 @@
-use crate::{content::OrderedList, pdf::Pdf};
+use crate::{
+    content::{List, Ordered, TextContent},
+    pdf::Pdf,
+};
 
-use super::TextDocument;
+use super::{TextDocument, TextDocumentDefinition};
 
-#[derive(Default)]
 pub struct DocumentBuilder {
     title: String,
-    definition: OrderedList,
+    definition: TextDocumentDefinition,
+}
+
+impl Default for DocumentBuilder {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl DocumentBuilder {
     pub fn new() -> Self {
-        Self::default()
+        Self {
+            title: String::new(),
+            definition: TextDocumentDefinition::new(String::new(), List::<Ordered>::default()),
+        }
     }
 
     pub fn title(mut self, title: impl Into<String>) -> Self {
@@ -18,8 +29,8 @@ impl DocumentBuilder {
         self
     }
 
-    pub fn with_definition(mut self, definition: OrderedList) -> Self {
-        self.definition = definition;
+    pub fn with_definition(mut self, definition: impl Into<TextDocumentDefinition>) -> Self {
+        self.definition = definition.into();
         self
     }
 

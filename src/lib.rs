@@ -1,14 +1,8 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub mod content;
+pub mod document;
+pub mod docx;
+pub use docx::Docx;
+pub mod pdf;
+pub use pdf::Pdf;
+pub mod pptx;
+pub use pptx::Pptx;
